@@ -130,7 +130,11 @@ kotlin {
                 api(libs.multiplatform.settings.datastore)
                 api(libs.androidx.datastore)
                 api(libs.androidx.datastore.preferences)
+            }
+        }
 
+        sourceSets.invokeWhenCreated("androidDebug") {
+            dependencies {
                 implementation(libs.apollo.debug.server)
             }
         }
